@@ -395,7 +395,7 @@ class WebSocketEngine:
 
         # Run strategy brain
         can_act = self.action_sender.can_send_cooldown_action()
-        decision = decide_action(view, can_act)
+        decision = decide_action(view, can_act, turn=turn_num if isinstance(turn_num, int) else 0)
 
         if decision is None:
             return  # No action needed now
